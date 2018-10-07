@@ -112,7 +112,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     label.backgroundColor = UIColor.clear
     label.alpha = 10
     label.text = "title: \(indexPath.row)"
-    label.tag = 101
+    label.tag = 102
     label.font  = UIFont(name: "Avenir", size: 17.0)
     
     
