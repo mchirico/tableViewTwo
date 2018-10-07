@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import tvAdd
+@testable import tvTwo
 
 class tvAddTests: XCTestCase {
 
