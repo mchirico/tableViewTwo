@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/mchirico/tableViewTwo.svg?branch=develop)](https://travis-ci.org/mchirico/tableViewTwo)
+
 # tableViewTwo
 Two TableViews on One ViewController
 
