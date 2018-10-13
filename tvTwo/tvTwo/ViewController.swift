@@ -54,10 +54,37 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     if tableView == tableView0 {
       let cell = tableView.dequeueReusableCell(withIdentifier: "cell0")
       
-      if let tvc = cell as? TableViewCell0 {
-        tvc.label0.text = "one"
-        tvc.label1.text = "s"
+      let bgView: UIView = UIView(frame: CGRect(x: 10, y: 0, width: 367, height: 37))
+      
+      bgView.backgroundColor = UIColor.gray
+      bgView.layer.borderWidth = 3
+      bgView.alpha = 1
+      bgView.layer.cornerRadius = 9
+      bgView.tag = 100
+      
+      bgView.center.x -=  view.bounds.width
+      
+      
+      let label = UILabel(frame: CGRect(x:0, y:10, width:200, height:15))
+      //label.center = CGPointMake(160, 284)
+      label.textAlignment = NSTextAlignment.center
+      
+      label.textColor = UIColor.black
+      label.backgroundColor = UIColor.clear
+      label.alpha = 10
+      label.text = "title: \(indexPath.row)"
+      label.tag = 101
+      label.font  = UIFont(name: "Avenir", size: 17.0)
+      
+      bgView.addSubview(label)
+      
+      cell!.addSubview(bgView)
+      
+      UIView.animate(withDuration: 0.5) {
+        bgView.center.x += self.view.bounds.width
       }
+      
+
       
       return cell!
       
@@ -65,14 +92,54 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     
-   
-      let cell = tableView.dequeueReusableCell(withIdentifier: "cell1")
-      
-      if let tvc = cell as? TableViewCell1 {
-        tvc.label0.text = "two"
-        tvc.label1.text = "s"
-      }
-      return cell!
+    
+    let cell = tableView.dequeueReusableCell(withIdentifier: "cell1")
+    
+
+    let bgView: UIView = UIView(frame: CGRect(x: 15, y: 0, width: 367, height: 40))
+    
+    bgView.backgroundColor = UIColor.green
+    bgView.layer.borderWidth = 1
+    bgView.alpha = 1
+    bgView.layer.cornerRadius = 9
+    
+    bgView.tag = 100
+    
+    bgView.center.x -=  view.bounds.width
+    
+    let bgViewM: UIView = UIView(frame: CGRect(x: 20, y: 3.4, width: 200, height: 29))
+    
+    bgViewM.backgroundColor = UIColor.white
+    bgViewM.layer.borderWidth = 1
+    bgViewM.alpha = 1
+    bgViewM.layer.cornerRadius = 9
+    bgViewM.tag = 300
+    
+    let label = UILabel(frame: CGRect(x:10, y:10, width:200, height:15))
+
+    label.textAlignment = NSTextAlignment.center
+    
+    label.textColor = UIColor.black
+    label.backgroundColor = UIColor.clear
+    label.alpha = 10
+    label.text = "title: \(indexPath.row)"
+    label.tag = 102
+    label.font  = UIFont(name: "Avenir", size: 17.0)
+    
+    
+    bgViewM.addSubview(label)
+    bgView.addSubview(bgViewM)
+    
+    UIView.animate(withDuration: 0.5) {
+      bgView.center.x += self.view.bounds.width
+    }
+
+    cell!.addSubview(bgView)
+    
+    return cell!
+    
+    
+
     
     
   }
