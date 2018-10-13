@@ -62,6 +62,9 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
       bgView.layer.cornerRadius = 9
       bgView.tag = 100
       
+      bgView.center.x -=  view.bounds.width
+      
+      
       let label = UILabel(frame: CGRect(x:0, y:10, width:200, height:15))
       //label.center = CGPointMake(160, 284)
       label.textAlignment = NSTextAlignment.center
@@ -76,6 +79,12 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
       bgView.addSubview(label)
       
       cell!.addSubview(bgView)
+      
+      UIView.animate(withDuration: 0.5) {
+        bgView.center.x += self.view.bounds.width
+      }
+      
+
       
       return cell!
       
@@ -95,6 +104,8 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     bgView.layer.cornerRadius = 9
     
     bgView.tag = 100
+    
+    bgView.center.x -=  view.bounds.width
     
     let bgViewM: UIView = UIView(frame: CGRect(x: 20, y: 3.4, width: 200, height: 29))
     
@@ -119,7 +130,9 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     bgViewM.addSubview(label)
     bgView.addSubview(bgViewM)
     
-    
+    UIView.animate(withDuration: 0.5) {
+      bgView.center.x += self.view.bounds.width
+    }
 
     cell!.addSubview(bgView)
     
